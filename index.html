@@ -57,13 +57,24 @@ h2 {
 
 <p id="message"> please draw my picture! ^^</p>
 
-<audio id="myAudio" style="display:none" loop controls autoplay>
+<audio id="myAudio1"   style="display:none"  controls loop >
   <source  src="music.mp3" type="audio/mpeg">
 </audio>
-<audio id="myAudio" style="display:none" loop controls autoplay>
+<audio id="myAudio"  style="display:none"  loop  controls >
   <source  src="fireworks.mp3" type="audio/mpeg">
 </audio>
-    
+
+
+<script src="jquery-2.2.4.min.js"></script>
+<script>
+$(document).ready(function(){
+  var x = document.getElementById("myAudio"); 
+  x.play();
+
+  var y = document.getElementById("myAudio1"); 
+  y.play();
+});
+</script>
 
 <script type="text/javascript" name="TypingText.js">
 TypingText = function(element, interval, cursor, finishedCallback) {
