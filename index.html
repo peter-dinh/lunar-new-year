@@ -57,7 +57,8 @@ h2 {
 
 <p id="message">Bạn và tôi! Minh \nHãy cầu chúc cho những tháng ngày tươi đẹp tới! ^^ Peter Dinh</p>
 
-<audio id="myAudio1"  style="display:none" preload="none" controls loop >
+
+<audio id="myAudio1"   style="display:none" preload="none" controls loop >
   <source  src="music.mp3" type="audio/mpeg">
 </audio>
 <audio id="myAudio"  style="display:none" preload="none" loop  controls >
@@ -68,8 +69,23 @@ h2 {
 <script src="jquery-2.2.4.min.js"></script>
 <script>
 $(document).ready(function(){
-  $('#myAudio').get(0).play();
-  $('#myAudio1').get(0).play();
+  x = $('#myAudio').get(0)
+  y = $('#myAudio1').get(0)
+  var playPromise = x.play();
+
+  if (playPromise !== undefined) {
+    playPromise.then(_ => {
+      // Automatic playback started!
+      // Show playing UI.
+      x.play();
+      y.play();
+    })
+    .catch(error => {
+      // Auto-play was prevented
+      // Show paused UI.
+    });
+  }
+  // $('#myAudio1').get(0).play();
 });
 </script>
 
