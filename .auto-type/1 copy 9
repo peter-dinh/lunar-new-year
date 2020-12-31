@@ -1,0 +1,10 @@
+file: src/js/firework.js
+line: 1
+align: top= offsprings
+---
+class Firework {
+
+}↑  constructor(x, y, targetX, targetY, shade, offsprings) {
+    
+  }↑ this.dead = false
+    this.offsprings = offsprings
